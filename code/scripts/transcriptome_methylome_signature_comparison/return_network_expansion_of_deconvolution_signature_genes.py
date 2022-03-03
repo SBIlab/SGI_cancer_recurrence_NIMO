@@ -18,7 +18,7 @@ def parse_multiomics_signature_genes(coordinate_source):
 	coordinate_source = 'FANTOM'
 	'''
 	output, output2 = [], [] 
-	fi_dir = '../result' 
+	fi_dir = '../../result' 
 	fiList = os.listdir(fo_dir)
 	for fi in fiList:
 		if '%s_min_distance_LM22.txt'%coordinate_source == fi:
@@ -38,7 +38,7 @@ def parse_multiomics_signature_genes(coordinate_source):
 
 ## INITIALIZE
 coordinate_sources = ['FANTOM'] # 'FANTOM'
-fo_dir = '../result' #/data/user/junghokong/co_work/SGI_CRC_seq/result/3_transcriptome_methylome_signature_comparison'
+fo_dir = '../../result'
 
 print 'importing network, ', time.ctime()
 network = 'string'
