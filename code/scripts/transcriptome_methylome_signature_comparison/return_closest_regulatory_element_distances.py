@@ -7,7 +7,7 @@ import time, os
 execfile('parse_genomic_data.py', globals())
 
 ## INITIALIZE
-fo_dir = '/data/user/junghokong/co_work/SGI_CRC_seq/result/3_transcriptome_methylome_signature_comparison'
+fo_dir = '../../result'
 LM22_signature, LM22_uniprot, LM22_exp, LM22_exp_uniprot = LM22_signature_genes()
 coordinate_sources = ['FANTOM'] # 'FANTOM'
 
