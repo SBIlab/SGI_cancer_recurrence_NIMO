@@ -1,6 +1,5 @@
 ## parse genomic data including : gene chromosome sites, gene promoter and enhancer regions ##
 ## promoter, enhancer or TSS/TTS region from : FANTOM
-## chromosome sites of CpG sites from ensg hg19
 ## signature methylation sites from 'MethylCIBERSORT' reference datasets
 ## signature transcriptome genes from 'CIBERSORT' reference datasets
 
@@ -85,24 +84,6 @@ def FANTOM_CpG_mapping():
 	return output
 
 
-def ensGene_gene_location_mapping():
-	'''
-	output = { chr : [ ( position_start, position_end, strand, gene, uniprot ) ] }
-	'''
-	output = defaultdict(list)
-	f = open('/data/user/junghokong/co_work/SGI_CRC_seq/data/ensg_hg19/ensGene.txt', 'r')
-	for line in f.xreadlines():
-		line = line.strip().split('\t')
-		Chr, strand, position_start, position_end, ensg = line[2], line[3], int(line[4]), int(line[5]), line[12]
-		if ensg in ensg2gene:
-			gene = ensg2gene[ensg]
-			if gene in gene2uniprot:
-				uniprot = gene2uniprot[gene]
-			else:
-				uniprot = 'na'
-			output[Chr].append( (position_start, position_end, strand, gene, uniprot) )
-	f.close()
-	return output
 
 
 def LM22_signature_genes():
@@ -164,14 +145,14 @@ def LM22_cell_type_DEGs():
 	f.close()
 	return output, output2, output3, output4
 
-def parse_multiomics_signature_genes(coordinate_source):
+def parse_multiomics_signature_genes(coordinate_source='FANTOM'):
 	'''
 	Returns signature genes from transcriptome + methylome CIBERSORT/MethylCIBERSORT datasets
 	output = [ list of signature genes ]
 	output2 = [ list of signature genes in uniprot ID ]
 	-----------------------
 	Input
-	coordinate_source = 'FANTOM', 'ensgene'
+	coordinate_source = 'FANTOM'
 	'''
 	output, output2 = [], []
 	fi_dir = '/data/user/junghokong/co_work/SGI_CRC_seq/result/3_transcriptome_methylome_signature_comparison'
