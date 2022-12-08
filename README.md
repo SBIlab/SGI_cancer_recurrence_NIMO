@@ -12,7 +12,7 @@ All python packages can be installed via pip (https://pypi.org/project/pip/).
 ## Description
 Codes to identify NIMO signature genes by using transcriptome- and methylome-based cell type markers.
 
-##Patients recurrence prediction
+## Patients recurrence prediction
 - Code for reproducing cross-validation of patients recurrence prediction is provided under the './code/scripts/recur_ML_prediction/'
 - For SGI cohorts prediction, run 'test_ML_predict_recur_SGI_cohort.py'
 - For GSE107442 cohorts prediction, run 'test_ML_predict_recur_GSE107422.py'
