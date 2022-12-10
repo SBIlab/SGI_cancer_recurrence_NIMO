@@ -220,7 +220,8 @@ for i in range(number_of_cv_iterations):
 			if metric == 'accuracy':
 				output2['%s_accuracy_score'%ref].append(score)
 				print '\t'.join(map(str, [ref, 'average VotingClassifier accuracy: %s'%np.mean(output2['%s_accuracy_score'%ref])]))
-
+		output['iternum'].append(iternum)
+		output['reference'].append(ref)
 
 # output dataframe
 output_col = ['reference', 'iternum']
