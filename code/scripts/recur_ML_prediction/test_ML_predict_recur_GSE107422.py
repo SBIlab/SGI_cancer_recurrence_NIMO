@@ -137,8 +137,8 @@ for i in range(number_of_cv_iterations):
             X_test.append(merged.loc[merged['sample_id'] == sample, :].drop(columns='sample_id').values[0])
             y_test.append(rdf.loc[rdf['Sample ID'] == sample, :]['Recur'].tolist()[0])
         X_train, X_test, y_train, y_test = np.array(X_train), np.array(X_test), np.array(y_train), np.array(y_test)
-        output["test_sample"].append("|".join(map(str, test_samples)))
-        output["test_y"].append("|".join(map(str, y_test)))
+        #output["test_sample"].append("|".join(map(str, test_samples)))
+        #output["test_y"].append("|".join(map(str, y_test)))
 
         ## Cross-Validation
         # voting estimator list
@@ -223,7 +223,7 @@ for i in range(number_of_cv_iterations):
         output['reference'].append(ref)
 
 # output dataframe
-output_col = ['reference', 'iternum', 'test_sample', 'test_y']
+output_col = ['reference', 'iternum']
 for ML in np.append(ML_algorithms, ['VotingClassifier']):
     for metric in ['pred_proba', 'AUC', 'accuracy', 'precision', 'recall', 'F1']:
         output_col.append('%s_%s' % (ML, metric))
