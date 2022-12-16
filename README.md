@@ -23,4 +23,4 @@ Codes to identify NIMO signature genes by using transcriptome- and methylome-bas
 - For plotting predictive performance of SMC cohort, run 'plot_performance_SMC_cohort.py'
 - For plotting predictive performance of GSE107422, run 'plot_performance_GSE107422.py'
 - For SMC cohorts prediction, run 'test_ML_predict_recur_SMC_cohort.py'
-- For GSE107442 cohorts prediction, run 'test_SMC_predict_recur_GSE107422.py'
+- For GSE107442 cohorts prediction, run 'test_ML_predict_recur_GSE107422.py'
