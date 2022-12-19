@@ -23,7 +23,7 @@ def parse_updated_retrospective_cohort_recurrence():
 	sample = '10001625'
 	'''
 	output = {}
-	df = pd.read_csv('../../data/clinical_SGI_cohort.txt', sep='\t')
+	df = pd.read_csv('../../data/clinical_SMC_cohort.txt', sep='\t')
 	for i in range(len(df)):
 		sample, recurrence_status = str(df['sampleID'][i]), df['Recur'][i]
 		if not sample in output:
